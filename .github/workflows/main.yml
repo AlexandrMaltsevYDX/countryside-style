@@ -32,7 +32,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /www-front
-          export USER_ACCESS_TOKEN=${{ secrets.USER_ACCESS_TOKEN }}
+          sed -i 's|USER_ACCES_TOKEN|${{ secrets.USER_ACCES_TOKEN }}|g' docker-compose.yml
           docker compose down
           docker compose up -d --build
           
