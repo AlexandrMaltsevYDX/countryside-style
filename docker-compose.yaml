@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: https://github.com/AlexandrMaltsevYDX/countryside-style#main
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    networks:
+      - dashboard_networks
+
+networks:
+  dashboard_networks:
+    driver: bridge
