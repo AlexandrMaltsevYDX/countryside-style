@@ -32,5 +32,8 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /www-front
+          export USER_ACCESS_TOKEN=${{ secrets.USER_ACCESS_TOKEN }}
           docker compose down
           docker compose up -d --build
+          
+          
